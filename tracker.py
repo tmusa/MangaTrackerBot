@@ -19,12 +19,11 @@ def setup():
     subreddit = reddit.subreddit('manga')
     redditor = reddit.redditor(config.REDDITOR)
     stream = subreddit.stream.submissions()
-
-    return stream, redditor, reddit
-
-
-def process_stream(stream, redditor):
     for submission in stream:
+        process_stream(submission, redditor)
+
+
+def process_stream(submission, redditor):
         title = submission.title
 
         if 'DISC' not in title.upper():
