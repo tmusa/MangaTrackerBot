@@ -33,7 +33,7 @@ class Manga:
         left = 0
         right = len(self.redditor_list) - 1
         while left <= right:
-            middle = int((left + right) / 2)
+            middle = (left + right) >> 1
 
             if self.redditor_list[middle] == redditor:
                 return True
@@ -73,7 +73,7 @@ def find(title):
     right = len(config.MANGA_LIST) - 1
     title = title.upper()
     while left <= right:
-        middle = int((left + right) / 2)
+        middle = (left + right) >> 1
 
         if config.MANGA_LIST[middle].title == title:
             return config.MANGA_LIST[middle]
