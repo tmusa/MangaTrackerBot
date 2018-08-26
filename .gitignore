@@ -197,5 +197,6 @@ pip-selfcheck.json
 
 # Personal files
 config.py
+MangaListHelper.py
 .idea
 # End of httpswww.gitignore.ioapipython,pycharm
