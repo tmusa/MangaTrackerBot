@@ -1,6 +1,7 @@
 import praw
 import config
 import MangaTrackerDBOPS as db
+import TitleParser as tp
 
 MESSAGE_TEMPLATE = 'MangaTrackerBot found a new chapter \n {title} \n {link}'
 
@@ -35,6 +36,7 @@ def process_stream(submission, reddit):
             return
 
         title = title.upper()
+        print(db.find_subscribers(tp.title(title)))
         print(title)
         for manga in db.all_manga():
             if manga in title:
